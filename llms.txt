@@ -1,0 +1,80 @@
+# White Star Souvenir Works — Titanic Souvenir Viewcard Generator
+
+## About this site
+An interactive browser tool that generates a twelve-photo front viewcard and a vintage postcard-style back page, themed around James Cameron's *Titanic* (1997) and Edward John Smith's RMS Titanic (launched 31 May 1909 · sank 15 April 1912).
+
+Built by **Twasin Alam**. Crafted in London, UK. Published under the name Viewcard Studio.
+
+Repository: <https://github.com/twasinalam/titanic-viewcard>
+Hosted at: <https://titanic-viewcard.tiiny.site/>
+
+---
+
+## Pages
+
+| URL | Purpose |
+|-----|---------|
+| `index.html` | Main application studio — drag & drop images onto a 12-slot grid, customise title and quote, select a card template, then print or export. |
+| `about.html` | What the studio is, how it works, and privacy commitments. |
+| `contact.html` | Bug reports (GitHub Issues) and general inquiries (email). |
+| `dedication.html` | Memorial page honouring the 1500 souls lost with the ship. |
+
+---
+
+## How the studio works
+
+1. **Drop images** onto the 12-slot grid. Filenames like `jack`, `rose`, `ismay`, `brady` are auto-matched to character slots via preset logic. Drag any slot to reorder.
+2. **Customise text.** Editable title banner and quote field. A memorial footer always renders below the grid.
+3. **Pick a template.** Six card templates available for different visual styles.
+4. **Print or export.** Renders an A4 sheet through the browser's native Print dialog. All rendering uses the HTML5 Canvas API. Images never leave the machine.
+
+---
+
+## Privacy & technical constraints
+
+- **Client-side only.** Everything runs locally in the browser. No server uploads, no backend, no database.
+- **No analytics trackers.** No Google Analytics, no cookie consent banners, no telemetry of any kind.
+- **Cookies limited to theme choice.** The only persistent state is `localStorage.tvs-theme` (`dark` or `cream`) so your colour preference carries across pages.
+- **Static site.** Four standalone HTML files plus one shared stylesheet (`style.css`). Zero build step, zero dependencies beyond CDN links (Tailwind CSS, Google Fonts, FontAwesome).
+- **Dual theme.** Deep navy / amber variant and parchment / vintage-brown variant, both respecting `prefers-color-scheme`.
+
+---
+
+## Character-name presets
+
+The following names map to fixed grid positions when you drop an image whose filename contains them (case-insensitive):
+
+- `jack` → Jack Dawson (Leonardo DiCaprio)
+- `rose` → Rose DeWitt Bukater (Kate Winslet)
+- `ismay` → Joseph Bruce Ismay (CEO of White Star Line)
+- `brady` → Designated slot in the film's narrative timeline
+- *(and others matching the film's character roster)*
+
+If a filename doesn't match any preset, the image lands in the first available empty slot.
+
+---
+
+## Design decisions worth knowing
+
+- The studio honours both the real RMS Titanic and James Cameron's 1997 film interpretation. Film-named presets exist alongside historically grounded copy on the dedication page.
+- The memorial footer always includes the line *"In Memory of the 1500 Who Went Down with the Titanic"* regardless of which template you choose.
+- Print output targets A4 paper at roughly 300 dpi equivalent via the Canvas-to-print pipeline.
+
+---
+
+## Licensing & attribution
+
+This is a personal project, not an official Titanic product. No affiliation with Royal Mail, the RMS Titanic Heritage Trust, or 20th Century Studios. All trademarks belong to their respective owners.
+
+Reproduce or adapt freely for personal use. Don't republish the code under another name without credit to Twasin Alam.
+
+---
+
+## Contact
+
+For bugs, feedback, or collaboration ideas:
+
+- Email: <twasinalam71@gmail.com>
+- GitHub Issues: <https://github.com/twasinalam/titanic-viewcard/issues>
+
+Checked periodically; replies within a few days when possible.
